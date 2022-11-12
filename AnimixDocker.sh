@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo su << EOF
 echo "Bem vindo ao Intalador do Animix :)"
 echo "Vamos começar ?"
 echo "Primeiro, vamos fazer algumas atualizações..."
@@ -76,9 +77,12 @@ then
 sudo apt install default-jre -y
 cd /home/ubuntu/Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
+EOF
 fi
 fi
 
+"cd Animix-PI/APPJar/target
+java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 
 
