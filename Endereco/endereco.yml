@@ -3,9 +3,8 @@
 version: '3.3'
 services:
   database:
-    image: mysql:8.0
+    image: mysql:5.7
     container_name: ContainerAnimix
-    container_name: AnimixDocker
     environment:
       MYSQL_DATABASE: 'animix'
       MYSQL_ROOT_PASSWORD: 'blueprotocol'
