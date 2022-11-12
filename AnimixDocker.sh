@@ -13,7 +13,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull mysql:8.0
 sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=animix" -e "MYSQL_ROOT_PASSWORD=blueprotocol" mysql:8.0
-sudo docker exec -it AnimixDocker bash mysql -u root -p -e "
+sudo docker exec -it AnimixDocker bash mysql -u root -p -B -e "
     use animix;
 
     CREATE TABLE studio(
@@ -71,3 +71,11 @@ then
 sudo apt install default-jre -y
 fi
 fi
+
+cd /home/ubuntu/Desktop
+git clone https://github.com/thaylaandreassi/Animix-PI.git
+
+cd Animix-PI/APPJar/target
+java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar
+
+git clone https://github.com/Eduardooliveira95/ScriptShell.git
