@@ -1,4 +1,5 @@
 #!/bin/bash
+<< EOF
 echo "Bem vindo ao Intalador do Animix :)"
 echo "Vamos começar ?"
 echo "Primeiro, vamos fazer algumas atualizações..."
@@ -74,10 +75,9 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-
 fi
 fi
-
+EOF
 "cd Animix-PI/APPJar/target
 java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
