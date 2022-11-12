@@ -75,6 +75,8 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
+cd /home/ubuntu/Desktop
+git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
 EOF
