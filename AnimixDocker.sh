@@ -13,7 +13,8 @@ sudo systemctl start docker
 sudo systemctl enable docker
 cd ~/ScriptShell/Endereco
 sudo docker-compose up -d
-sudo docker exec -it AnimixDocker bash"
+sudo docker start ContainerAnimix
+sudo docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     CREATE DATABASE animix;
     
     use animix;
@@ -71,13 +72,14 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-fi
-fi
 
 cd /home/ubuntu/Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
+fi
+fi
 
-cd Animix-PI/APPJar/target
-java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar
+"cd Animix-PI/APPJar/target
+java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
-git clone https://github.com/Eduardooliveira95/ScriptShell.git
+
+

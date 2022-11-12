@@ -4,6 +4,7 @@ version: '3.3'
 services:
   database:
     image: mysql:8.0
+    container_name: ContainerAnimix
     container_name: AnimixDocker
     environment:
       MYSQL_DATABASE: 'animix'
