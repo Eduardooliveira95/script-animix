@@ -1,5 +1,4 @@
 #!/bin/bash
-sudo su << EOF
 echo "Bem vindo ao Intalador do Animix :)"
 echo "Vamos começar ?"
 echo "Primeiro, vamos fazer algumas atualizações..."
@@ -15,7 +14,7 @@ sudo systemctl enable docker
 cd ~/ScriptShell/Endereco
 sudo docker-compose up -d
 sudo docker start ContainerAnimix
-sudo docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
+sudo docker exec -it $(sudo docker ps -aqf "name=AnimixDocker") mysql -u root -p -B -N -e "
     CREATE DATABASE animix;
     
     use animix;
@@ -77,7 +76,6 @@ then
 sudo apt install default-jre -y
 cd /home/ubuntu/Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
-EOF
 fi
 fi
 
