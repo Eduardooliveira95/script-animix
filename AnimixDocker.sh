@@ -11,9 +11,9 @@ sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
-cd ~/ScriptShell/Endereco
-sudo docker start ContainerAnimix
-sudo docker exec -it $(sudo docker ps -aqf "name=AnimixDocker") mysql -u root -p -B -N -e "
+sudo docker pull mysql:5.7
+sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     CREATE DATABASE animix;
     
     use animix;
