@@ -11,9 +11,9 @@ sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo docker pull mysql:8.0
-sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=animix" -e "MYSQL_ROOT_PASSWORD=blueprotocol" mysql:8.0
-sudo docker exec -it AnimixDocker bash mysql -u root -p -e "
+cd ~/ScriptShell/Endereco
+sudo docker-compose up -d
+sudo docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     use animix;
 
     CREATE TABLE studio(
