@@ -12,7 +12,6 @@ sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 cd ~/ScriptShell/Endereco
-sudo docker-compose up -d
 sudo docker start ContainerAnimix
 sudo docker exec -it $(sudo docker ps -aqf "name=AnimixDocker") mysql -u root -p -B -N -e "
     CREATE DATABASE animix;
@@ -65,7 +64,7 @@ java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
-cd /home/ubuntu/Desktop
+cd /Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
 else
 echo "java nao instalado"
@@ -74,7 +73,7 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-cd /home/ubuntu/Desktop
+cd /Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
