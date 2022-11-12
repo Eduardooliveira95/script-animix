@@ -14,6 +14,8 @@ sudo systemctl enable docker
 cd ~/ScriptShell/Endereco
 sudo docker-compose up -d
 sudo docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
+    CREATE DATABASE animix;
+    
     use animix;
 
     CREATE TABLE studio(
