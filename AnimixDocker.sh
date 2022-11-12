@@ -64,7 +64,7 @@ java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
-cd /Desktop
+cd /ScriptShell
 git clone https://github.com/thaylaandreassi/Animix-PI.git
 else
 echo "java nao instalado"
@@ -73,7 +73,7 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-cd /Desktop
+cd /ScriptShell
 git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
