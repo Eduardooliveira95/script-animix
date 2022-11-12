@@ -81,8 +81,6 @@ EOF
 fi
 fi
 
-"cd Animix-PI/APPJar/target
-java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 
 
