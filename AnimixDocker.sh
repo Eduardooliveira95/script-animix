@@ -65,6 +65,8 @@ java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
+cd /home/ubuntu/Desktop
+git clone https://github.com/thaylaandreassi/Animix-PI.git
 else
 echo "java nao instalado"
 echo "gostaria de instalar o java? (s/n)"
@@ -73,8 +75,6 @@ if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
 
-cd /home/ubuntu/Desktop
-git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
 
