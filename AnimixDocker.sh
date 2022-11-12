@@ -1,5 +1,4 @@
 #!/bin/bash
-<< EOF
 echo "Bem vindo ao Intalador do Animix :)"
 echo "Vamos começar ?"
 echo "Primeiro, vamos fazer algumas atualizações..."
@@ -79,7 +78,6 @@ cd /home/ubuntu/Desktop
 git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
-EOF
 
 
 
