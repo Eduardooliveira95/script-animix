@@ -80,8 +80,7 @@ git clone https://github.com/thaylaandreassi/Animix-PI.git
 fi
 fi
 EOF
-"cd Animix-PI/APPJar/target
-java -jar banco-modelo-1.0-SNAPSHOT-jar-with-dependencies.jar"
+
 
 
 
