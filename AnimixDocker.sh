@@ -9,7 +9,8 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
-
+fi
+fi
 # echo "Agora, vamos instalar sua interface gráfica!"
 # sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
