@@ -65,7 +65,7 @@ if [ $? -eq 0 ];
 then
 echo "java instalado"
 cd /ScriptShell
-git clone https://github.com/thaylaandreassi/Animix-PI.git
+git clone https://github.com/alecostx/animix-data-collection.git
 else
 echo "java nao instalado"
 echo "gostaria de instalar o java? (s/n)"
@@ -74,7 +74,7 @@ if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
 cd /ScriptShell
-git clone https://github.com/thaylaandreassi/Animix-PI.git
+git clone https://github.com/alecostx/animix-data-collection.git
 fi
 fi
 
