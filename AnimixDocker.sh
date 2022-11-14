@@ -7,6 +7,7 @@ sudo apt update && sudo apt update
 echo "gostaria de instalar a Interface gráfica? (s/n)"
 read inst
 if [ \"$inst\" == \"s\" ];
+then
 sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
 # echo "Agora, vamos instalar sua interface gráfica!"
