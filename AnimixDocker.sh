@@ -4,16 +4,8 @@ echo "Vamos começar ?"
 echo "Primeiro, vamos fazer algumas atualizações..."
 sudo apt update && sudo apt update
 
-echo "gostaria de instalar a Interface gráfica? (s/n)"
-read inst
-if [ \"$inst\" == \"s\" ];
-then
+echo "Agora, vamos instalar sua interface gráfica!"
 sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
-fi
-fi
-# echo "Agora, vamos instalar sua interface gráfica!"
-# sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
-
 
 sudo apt install docker.io -y
 sudo systemctl start docker
