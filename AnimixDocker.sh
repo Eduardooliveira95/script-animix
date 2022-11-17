@@ -1,6 +1,9 @@
 #!/bin/bash
+    sleep 3
 echo "Bem vindo ao Intalador do Animix :)"
+    sleep 3
 echo "Vamos começar ?"
+    sleep 5
 echo "Primeiro, vamos fazer algumas atualizações..."
 sudo apt update && sudo apt update
 
@@ -10,12 +13,14 @@ if [ \"$inst\" == \"s\" ];
 then
 sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 else 
+    sleep 5
 echo "Certo, vamos continuar!"
 fi
 
 # echo "Agora, vamos instalar sua interface gráfica!"
 # sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
+    sleep 3
 echo "Vamos fazer a instalação do container!"
 
 sudo apt install docker.io -y
@@ -86,7 +91,3 @@ cd /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 fi
 fi
-
-
-
-
