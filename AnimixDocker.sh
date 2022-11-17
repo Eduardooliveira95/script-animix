@@ -1,5 +1,4 @@
 #!/bin/bash
-    sleep 3
 echo "Bem vindo ao Intalador do Animix :)"
     sleep 3
 echo "Vamos começar ?"
@@ -28,6 +27,8 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull mysql:5.7
 sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+sudo docker bild -t ImageJava
+sudo docker run -d -t ContainerJava ImageJava
 docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     
     use Animix;
