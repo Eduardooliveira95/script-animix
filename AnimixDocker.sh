@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Bem vindo ao Intalador do Animix :)"
+echo "Bem vindo ao Instalador do Animix :)"
     sleep 3
 echo "Vamos começar ?"
     sleep 5
@@ -20,15 +20,13 @@ fi
 # sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
     sleep 3
-echo "Vamos fazer a instalação do container!"
+echo "Vamos fazer a instalação dos containers!"
 
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull mysql:5.7
 sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-sudo docker build -t dockerfile .
-sudo docker run -it --rm --name containerjava dockerfile
 docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     
     use Animix;
@@ -75,15 +73,22 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
         comment varchar(200)
     );
 "
+echo "Agora, vamos intalaer o Container que conterá o java para executar uma aplicação Animix :)"
+    sleep 3
+
+sudo docker build -t dockerfile .
+sudo docker run -it --rm --name containerjava dockerfile
+
 java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
+    sleep 3
 cd /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 else
 echo "java nao instalado"
-echo "gostaria de instalar o java? (s/n)"
+echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
 read inst
 if [ \"$inst\" == \"s\" ];
 then
