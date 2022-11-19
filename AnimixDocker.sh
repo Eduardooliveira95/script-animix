@@ -73,7 +73,7 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
         comment varchar(200)
     );
 "
-echo "Agora, vamos intalaer o Container que conterá o java para executar uma aplicação Animix :)"
+echo "Agora, vamos instalar o Container que conterá o java para executar uma aplicação Animix :)"
     sleep 3
 
 sudo docker build -t dockerfile .
