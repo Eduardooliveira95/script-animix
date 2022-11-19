@@ -84,7 +84,7 @@ if [ $? -eq 0 ];
 then
 echo "java instalado"
     sleep 3
-cd /ScriptShell
+cd .. /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 else
 echo "java nao instalado"
@@ -93,7 +93,7 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-cd /ScriptShell
+cd .. /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 fi
 fi
