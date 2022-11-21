@@ -33,7 +33,7 @@ then
 sudo apt install default-jre -y
 cd .. /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
-https://github.com/Lykked/animix-data-colection-CLI.git
+git clone https://github.com/Lykked/animix-data-colection-CLI.git
 fi
 
 # echo "Agora, vamos instalar sua interface gráfica!"
