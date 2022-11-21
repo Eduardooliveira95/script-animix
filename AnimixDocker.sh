@@ -19,8 +19,8 @@ fi
 if [ $? -eq 0 ];
 then
 echo "java instalado"
-    sleep 3
-    
+    sleep 4
+
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 else
