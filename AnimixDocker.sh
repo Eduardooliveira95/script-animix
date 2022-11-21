@@ -98,4 +98,5 @@ echo "Agora, vamos instalar o Container que conterá o java para executar uma ap
 sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
-fi fi
+fi 
+fi
