@@ -34,11 +34,10 @@ sudo apt install default-jre -y
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 
-# echo "Agora, vamos instalar sua interface gráfica!"
-# sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
     sleep 3
 echo "Vamos fazer a instalação dos containers!"
+fi
 
 sudo apt install docker.io -y
 sudo systemctl start docker
