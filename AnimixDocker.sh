@@ -20,7 +20,7 @@ if [ $? -eq 0 ];
 then
 echo "java instalado"
     sleep 3
-cd .. /ScriptShell
+    
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 else
@@ -30,7 +30,7 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-cd .. /ScriptShell
+
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 fi
