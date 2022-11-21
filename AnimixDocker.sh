@@ -97,7 +97,6 @@ echo "Agora, vamos instalar o Container que conterá o java para executar uma ap
     sleep 3
 
 sudo docker build -t dockerfile .
-sudo docker run -it --rm --name containerjava dockerfile
+sudo docker run -d -t --name containerjava dockerfile
 
-fi
 fi
