@@ -98,3 +98,4 @@ sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
 fi 
+fi
