@@ -16,28 +16,11 @@ else
 echo "Certo, vamos continuar!"
 fi
 
-if [ $? -eq 0 ];
-then
-echo "java instalado"
-    sleep 4
-
-git clone https://github.com/alecostx/animix-data-collection.git
-git clone https://github.com/Lykked/animix-data-colection-CLI.git
-else
-echo "java nao instalado"
-echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
-read inst
-if [ \"$inst\" == \"s\" ];
-then
-sudo apt install default-jre -y
-
-git clone https://github.com/alecostx/animix-data-collection.git
-git clone https://github.com/Lykked/animix-data-colection-CLI.git
-
+# echo "Agora, vamos instalar sua interface gráfica!"
+# sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
     sleep 3
 echo "Vamos fazer a instalação dos containers!"
-fi
 
 sudo apt install docker.io -y
 sudo systemctl start docker
@@ -47,7 +30,6 @@ sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -
 docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
     
     use Animix;
-
     CREATE TABLE studio(
         idStudio int primary key auto_increment not null,
         nomeEmpresa varchar(45),
@@ -57,7 +39,6 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
         telefone varchar(45),
         CNPJ varchar(45),
 );
-
     CREATE TABLE maquinas(
         idMaquina int primary key auto_increment,
         fkStudio int,
@@ -74,7 +55,6 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
         monitoraTemperatura bool,
         quantidadeDiscos int,
     );
-
     CREATE TABLE dados(
         idDado int primary key auto_increment not ,
         fkMaquina int,
@@ -96,5 +76,23 @@ echo "Agora, vamos instalar o Container que conterá o java para executar uma ap
 sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
-fi 
+java -version
+if [ $? -eq 0 ];
+then
+echo "java instalado"
+    sleep 3
+cd .. /ScriptShell
+git clone https://github.com/alecostx/animix-data-collection.git
+git clone https://github.com/Lykked/animix-data-colection-CLI.git
+else
+echo "java nao instalado"
+echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
+read inst
+if [ \"$inst\" == \"s\" ];
+then
+sudo apt install default-jre -y
+cd .. /ScriptShell
+git clone https://github.com/alecostx/animix-data-collection.git
+git clone https://github.com/Lykked/animix-data-colection-CLI.git
+fi
 fi
