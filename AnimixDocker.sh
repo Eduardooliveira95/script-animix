@@ -73,10 +73,6 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
 echo "Agora, vamos instalar o Container que conterá o java para executar uma aplicação Animix :)"
     sleep 3
 
-sudo docker build -t dockerfile .
-sudo docker run -d -t --name containerjava dockerfile
-
-java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
@@ -84,6 +80,11 @@ echo "java instalado"
 cd .. /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
+
+sudo docker build -t dockerfile .
+sudo docker run -d -t --name containerjava dockerfile
+
+
 else
 echo "java nao instalado"
 echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
@@ -94,5 +95,10 @@ sudo apt install default-jre -y
 cd .. /ScriptShell
 git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
+
+sudo docker build -t dockerfile .
+sudo docker run -d -t --name containerjava dockerfile
+
+
 fi
 fi
