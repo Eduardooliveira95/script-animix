@@ -16,6 +16,26 @@ else
 echo "Certo, vamos continuar!"
 fi
 
+java -version
+if [ $? -eq 0 ];
+then
+echo "java instalado"
+    sleep 3
+cd .. /ScriptShell
+git clone https://github.com/alecostx/animix-data-collection.git
+git clone https://github.com/Lykked/animix-data-colection-CLI.git
+else
+echo "java nao instalado"
+echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
+read inst
+if [ \"$inst\" == \"s\" ];
+then
+sudo apt install default-jre -y
+cd .. /ScriptShell
+git clone https://github.com/alecostx/animix-data-collection.git
+https://github.com/Lykked/animix-data-colection-CLI.git
+fi
+
 # echo "Agora, vamos instalar sua interface gráfica!"
 # sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 
@@ -79,21 +99,5 @@ echo "Agora, vamos instalar o Container que conterá o java para executar uma ap
 sudo docker build -t dockerfile .
 sudo docker run -it --rm --name containerjava dockerfile
 
-java -version
-if [ $? -eq 0 ];
-then
-echo "java instalado"
-    sleep 3
-cd .. /ScriptShell
-git clone https://github.com/alecostx/animix-data-collection.git
-else
-echo "java nao instalado"
-echo "gostaria de instalar o java em sua Máquina Virtual? (s/n)"
-read inst
-if [ \"$inst\" == \"s\" ];
-then
-sudo apt install default-jre -y
-cd .. /ScriptShell
-git clone https://github.com/alecostx/animix-data-collection.git
 fi
 fi
