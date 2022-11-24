@@ -16,9 +16,6 @@ else
 echo "Certo, vamos continuar!"
 fi
 
-# echo "Agora, vamos instalar sua interface gráfica!"
-# sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
-
     sleep 3
 echo "Vamos fazer a instalação dos containers!"
 
@@ -76,8 +73,9 @@ echo "Agora, vamos instalar o Container que conterá o java para executar uma ap
 if [ $? -eq 0 ];
 then
 echo "java instalado"
+sudo apt install default-jre -y
     sleep 3
-git clone https://github.com/alecostx/animix-data-collection.git
+# git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 
 sudo docker build -t dockerfile .
@@ -91,7 +89,7 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-git clone https://github.com/alecostx/animix-data-collection.git
+# git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 
 sudo docker build -t dockerfile .
