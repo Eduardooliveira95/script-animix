@@ -95,6 +95,8 @@ git clone https://github.com/Lykked/animix-data-colection-CLI.git
 sudo docker build -t dockerfile .
 sudo docker run -d -t --name containerjava dockerfile
 
+sudo docker exec -it containerjava bash
+cd ScriptShell/animix-data-colection-CLI/animix/target/animix-data-colection-CLI/animix/target
 
 fi
 fi
