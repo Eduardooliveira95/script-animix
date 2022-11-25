@@ -97,6 +97,7 @@ sudo docker run -d -t --name containerjava dockerfile
 
 sudo docker exec -it containerjava bash
 cd ScriptShell/animix-data-colection-CLI/animix/target/animix-data-colection-CLI/animix/target
+java -jar animix-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 fi
 fi
