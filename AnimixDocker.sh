@@ -2,6 +2,10 @@
 echo "Bem vindo ao Instalador do Animix :)"
     sleep 3
 echo "Vamos começar ?"
+
+echo "Vamos adicionar um usuário padrão Ubuntu"
+su passwd Ubuntu
+
     sleep 5
 echo "Primeiro, vamos fazer algumas atualizações..."
 sudo apt update && sudo apt update
@@ -69,6 +73,7 @@ docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
 "
 echo "Agora, vamos instalar o Container que conterá o java para executar uma aplicação Animix :)"
     sleep 3
+
 
 if [ $? -eq 0 ];
 then
