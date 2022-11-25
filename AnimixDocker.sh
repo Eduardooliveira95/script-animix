@@ -3,9 +3,6 @@ echo "Bem vindo ao Instalador do Animix :)"
     sleep 3
 echo "Vamos começar ?"
 
-echo "Vamos adicionar um usuário padrão Ubuntu"
-su passwd Ubuntu
-
     sleep 5
 echo "Primeiro, vamos fazer algumas atualizações..."
 sudo apt update && sudo apt update
@@ -27,8 +24,7 @@ sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull mysql:5.7
-sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
-sudo docker exec -it AnimixDocker bash mysql -u root -p -B -N -e "
+sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7  -u root -p -B -N -e "
 
     use Animix;
     CREATE TABLE studio(
