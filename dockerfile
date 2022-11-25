@@ -1,4 +1,4 @@
 FROM openjdk:11-jre
-COPY . /ScriptShell/animix-data-colection-CLI/animix/target/
+COPY . /ScriptShell/animix-1.0-SNAPSHOT-jar-with-dependencies.jar
 # RUN chmod 777 . /ScriptShell/animix-data-colection-CLI/animix/target/animix-data-colection-CLI/animix/target/
-# CMD ["java", "-jar", "animix-1.0-SNAPSHOT-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "animix-1.0-SNAPSHOT-jar-with-dependencies.jar"]
