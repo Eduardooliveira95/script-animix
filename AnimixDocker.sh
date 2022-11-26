@@ -25,8 +25,9 @@ sudo systemctl start docker
 sudo systemctl enable docker
 sudo docker pull mysql:8.0
 sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:8.0
-sudo docker exec -it AnimixDocker mysql -u root -p -e "
-
+sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
+    CREATE DATABASE Animix;
+    
     use Animix;
 
     CREATE TABLE studio(
