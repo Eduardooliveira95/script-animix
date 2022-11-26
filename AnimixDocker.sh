@@ -28,15 +28,17 @@ sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -
 sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
 
     use Animix;
+    
     CREATE TABLE studio(
-        idStudio int primary key auto_increment not null,
+        idStudio int primary key auto_increment,
         nomeEmpresa varchar(45),
         email varchar(45),
         senha varchar(45),
         logradouro varchar(45),
         telefone varchar(45),
         CNPJ varchar(45),
-);
+    );
+
     CREATE TABLE maquinas(
         idMaquina int primary key auto_increment,
         fkStudio int,
@@ -53,8 +55,9 @@ sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
         monitoraTemperatura bool,
         quantidadeDiscos int,
     );
+
     CREATE TABLE dados(
-        idDado int primary key auto_increment not ,
+        idDado int primary key auto_increment,
         fkMaquina int,
         usoCPU decimal(10,2),
         UsoMemoria decimal(5,2),
