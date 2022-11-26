@@ -27,7 +27,7 @@ sudo systemctl enable docker
 #sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
 #sudo docker exec -it AnimixDocker mysql --protocol tcp -u root -p -e "
 
-sudo docker-compose up -d
+sudo docker-composeAnimix up -d
 		sudo docker start ContainerMySql
 		sudo docker exec -it $(sudo docker ps -aq) mysql -u root -p -B -N -e "
     CREATE DATABASE Animix;

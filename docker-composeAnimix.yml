@@ -13,9 +13,3 @@ services:
       - '3306'
     volumes:
       - './.mysql-data/db:/var/lib/mysql'
-    jre-default:
-      image: openjdk-11-jre
-      build:
-      context: . 
-      dockerfile: dockerfile
-      container_name: ContainerAnimixMySql
