@@ -36,7 +36,7 @@ sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
         senha varchar(45),
         logradouro varchar(45),
         telefone varchar(45),
-        CNPJ varchar(45),
+        CNPJ varchar(45)
     );
 
     CREATE TABLE maquinas(
@@ -53,7 +53,7 @@ sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
         monitoraMemoria bool,
         monitoraProcessador bool,
         monitoraTemperatura bool,
-        quantidadeDiscos int,
+        quantidadeDiscos int
     );
 
     CREATE TABLE dados(
