@@ -23,12 +23,12 @@ echo "Vamos fazer a instalação dos containers!"
 sudo apt install docker.io -y
 sudo systemctl start docker
 sudo systemctl enable docker
-sudo docker pull mysql:5.7
-sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:5.7
+sudo docker pull mysql:8.0
+sudo docker run -d -p 3306:3306 --name AnimixDocker -e "MYSQL_DATABASE=Animix" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:8.0
 sudo docker exec -it AnimixDocker mysql -u root -p -B -N -e "
 
     use Animix;
-    
+
     CREATE TABLE studio(
         idStudio int primary key auto_increment,
         nomeEmpresa varchar(45),
