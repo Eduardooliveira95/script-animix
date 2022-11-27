@@ -29,47 +29,64 @@ sudo docker exec -it AnimixDocker mysql --protocol tcp -u root -p -e "
 
     use Animix;
 
-    CREATE TABLE studio(
-        idStudio int primary key auto_increment,
-        nomeEmpresa varchar(45),
-        email varchar(45),
-        senha varchar(45),
-        logradouro varchar(45),
-        telefone varchar(45),
-        CNPJ varchar(45)
-    );
+CREATE TABLE studio(
+	idStudio int primary key auto_increment,
+	nomeEmpresa varchar(45),
+	email varchar(45),
+	senha varchar(45),
+	logradouro varchar(45),
+	telefone varchar(45),
+	CNPJ varchar(45)
+);
 
-    CREATE TABLE maquinas(
-        idMaquina int primary key auto_increment,
-        fkStudio int,
-        disco varchar(100),
-        discoIdeal decimal(5, 2),
-        memoria varchar(100),
-        memoriaIdeal decimal(5, 2),
-        processador varchar(100),
-        processamentoIdeal decimal(5, 2),
-        sistema varchar(100),
-        monitoraDisco bool,
-        monitoraMemoria bool,
-        monitoraProcessador bool,
-        monitoraTemperatura bool,
-        quantidadeDiscos int
-    );
+CREATE TABLE maquinas(
+	idMaquina int primary key auto_increment,
+	fkStudio int,
+	disco varchar(45),
+	discoIdeal decimal(5, 2) NULL,
+	memoria varchar(45),
+	memoriaIdeal decimal(5, 2) NULL,
+	processador varchar(45),
+	processamentoIdeal decimal(5, 2) NULL,
+	sistema varchar(45),
+	monitoraDisco bit,
+	monitoraMemoria bit,
+	monitoraProcessador bit,
+	monitoraTemperatura bit,
+	temperaturaIdeal decimal(5, 2) NULL,
+	quantidadeDiscos bit,
+	situacao bit,
+	arquitetura varchar(45),
+	fabricante varchar(45),
+	permissoes varchar(45),
+	inicializado varchar(45)
+);
 
-    CREATE TABLE dados(
-        idDado int primary key auto_increment,
-        fkMaquina int,
-        usoCPU decimal(10,2),
-        UsoMemoria decimal(5,2),
-        temperatura decimal(5,2),
-        porcentDisco decimal(5,2),
-        qtdProcessos int,
-        qtdServicos int,
-        dataColeta varchar(45),
-        momento time(7),
-        isCritico bool,
-        comment varchar(200)
-    );
+CREATE TABLE dados(
+	idDado int primary key auto_increment,
+	fkMaquina int,
+	usoCpu decimal(5, 2) NULL,
+	usoMemoria decimal(5, 2) NULL,
+	temperatura decimal(5, 2) NULL,
+	qtdProcessos int,
+	qtdServicos int,
+	dataColeta varchar(45),
+	momento time,
+	isCritico bit NULL,
+	comment varchar(200) NULL,
+	leitura decimal(5, 2) NULL,
+	escrita decimal(5, 2) NULL,
+	usoDisco decimal(5, 2) NULL
+);
+
+CREATE TABLE funcionario(
+	idFuncionario int primary key auto_increment,
+	cargo varchar(45),
+	nome varchar(45),
+	email varchar(45),
+	senha varchar(45),
+	fkStudio int
+);
 "
 echo "Agora, vamos instalar o Container que conterá o java para executar uma aplicação Animix :)"
     sleep 3
