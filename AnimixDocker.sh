@@ -91,18 +91,16 @@ CREATE TABLE funcionario(
 echo "Agora, vamos instalar o Container que conterá o java para executar uma aplicação Animix :)"
     sleep 3
 
-
+java -version
 if [ $? -eq 0 ];
 then
 echo "java instalado"
 sudo apt install default-jre -y
     sleep 3
-git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 
 sudo docker build -t dockerfile .
 sudo docker run -d -t --rm --name containerjava dockerfile
-
 
 else
 echo "java nao instalado"
@@ -111,7 +109,6 @@ read inst
 if [ \"$inst\" == \"s\" ];
 then
 sudo apt install default-jre -y
-git clone https://github.com/alecostx/animix-data-collection.git
 git clone https://github.com/Lykked/animix-data-colection-CLI.git
 
 sudo docker build -t dockerfile .
