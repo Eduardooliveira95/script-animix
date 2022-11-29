@@ -70,7 +70,6 @@ CREATE TABLE dados(
 	fkMaquina int,
 	usoCpu decimal(10, 2) NULL,
 	usoMemoria decimal(10, 2) NULL,
-	temperatura decimal(10, 2) NULL,
 	qtdProcessos int,
 	qtdServicos int,
 	dataColeta varchar(45),
@@ -79,7 +78,8 @@ CREATE TABLE dados(
 	comment varchar(200) NULL,
 	leitura decimal(10, 2) NULL,
 	escrita decimal(10, 2) NULL,
-	usoDisco decimal(10, 2) NULL
+	usoDisco decimal(10, 2) NULL,
+    momento time
 );
 
 CREATE TABLE funcionario(
